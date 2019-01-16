@@ -1,5 +1,6 @@
 var fs = require('fs'),
-	path = require('path');
+	path = require('path'),
+	sidebar = require('../helpers/sidebar');
 
 module.exports = {
 	index: function(req, res) {
@@ -31,7 +32,10 @@ module.exports = {
 				}
 				]
 			}
-		res.render('image', viewModel);
+			sidebar(viewModel, function(viewModel){
+				console.log(viewModel);
+				res.render('image', viewModel);
+			})
 	},
 
 	create: function(req, res) {
