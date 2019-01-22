@@ -2,4 +2,4 @@
 
 run code : 
 - install modules and packages : npm install
-- start server : npm server
+- start server : node server
